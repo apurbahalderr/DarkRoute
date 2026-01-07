@@ -1,0 +1,21 @@
+{
+  "name": "upside-down",
+  "version": "1.0.0",
+  "description": "Full-stack monorepo",
+  "private": true,
+  "scripts": {
+    "dev": "concurrently \"npm run dev -w backend\" \"npm run dev -w frontend\"",
+    "build": "npm run build -w frontend && npm run build -w backend",
+    "start": "concurrently \"npm start -w backend\" \"npm start -w frontend\"",
+    "install-all": "npm install && npm install -w backend && npm install -w frontend",
+    "backend": "npm run dev -w backend",
+    "frontend": "npm run dev -w frontend"
+  },
+  "devDependencies": {
+    "concurrently": "^8.2.2"
+  },
+  "workspaces": [
+    "backend",
+    "frontend"
+  ]
+}
